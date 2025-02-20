@@ -132,7 +132,7 @@ function DetailsAvatar({
   const [currentNote, setCurrentNote] = useState<string>(note);
 
   const handleSaveNote = () => {
-    onSaveNote(id, currentNote);
+    onSaveNote(currentNote, id);
     setCurrentNote("");
   };
   return (
