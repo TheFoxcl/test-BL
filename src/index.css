@@ -1,0 +1,35 @@
+@import "tailwindcss";
+
+@theme {
+  --color-customPurplePrimary: #eee3ff;
+  --color-customPurpleSecondary: #8054c7;
+  --color-customPurpleTerciary: #5a3696;
+  --color-customGreen: #63d838;
+}
+:root {
+  font-family: Greycliff CF Figma 001, Inter, system-ui, Avenir, Helvetica,
+    Arial, sans-serif;
+  font-weight: 400;
+  color: #111827;
+  background-color: #ffffff;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+#characterListContainer::-webkit-scrollbar {
+  width: 8px;
+}
+
+#characterListContainer::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+#characterListContainer::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 10px;
+}
+
+#characterListContainer::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
