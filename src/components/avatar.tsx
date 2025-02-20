@@ -115,7 +115,7 @@ interface DetailsAvatarProps {
   status: string;
   location: string;
   note: string;
-  onSaveNote: (note: string) => void;
+  onSaveNote: (id: string, note: string) => void;
 }
 
 function DetailsAvatar({

@@ -1,11 +1,5 @@
 import { useState, useEffect } from "react";
-import {
-  Route,
-  Routes,
-  useParams,
-  useNavigate,
-  useLocation,
-} from "react-router-dom";
+import { Route, Routes, useParams, useNavigate } from "react-router-dom";
 import "./App.css";
 import { GET_CHARACTERS } from "./modulos/charactersQuery";
 import { useQuery, useApolloClient } from "@apollo/client";
@@ -22,7 +16,6 @@ const App: React.FC = () => {
 
   const [charactersById, setCharactersById] = useState<any>({});
   const navigate = useNavigate();
-  const location = useLocation();
 
   // Detectar si la pantalla es pequeña (sm)
   const isSmallScreen = useMediaQuery({ query: "(max-width: 700px)" });
@@ -31,7 +24,7 @@ const App: React.FC = () => {
     charactersById,
   }) => {
     const { id } = useParams<{ id: string }>();
-    const character = charactersById[id];
+    const character = id ? charactersById[id] : undefined;
 
     const handleSaveNote = (id: string, note: string) => {
       setCharactersById((prevCharacters: any) => ({
@@ -54,7 +47,7 @@ const App: React.FC = () => {
           status={character.status}
           location={character.location.name}
           note={character.note}
-          onSaveNote={handleSaveNote}
+          onSaveNote={(note) => handleSaveNote(character.id, note)}
         />
       </div>
     ) : null;
@@ -145,7 +138,9 @@ const App: React.FC = () => {
                 charactersById={charactersById}
                 handleHeartClick={handleHeartClick}
                 handleFocusCharacter={handleFocusCharacter}
-              />
+              >
+                <></>
+              </Layout>
             }
           />
           {/* En pantallas pequeñas, mostrar solo detalles en "/:id" */}

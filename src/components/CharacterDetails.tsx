@@ -13,7 +13,7 @@ const CharacterDetails: React.FC<CharacterDetailsProps> = ({
   handleHeartClick,
 }) => {
   const { id } = useParams<{ id: string }>();
-  const character = charactersById[id];
+  const character = id ? charactersById[id] : undefined;
 
   if (!character) {
     return <p>Character not found</p>;
