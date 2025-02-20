@@ -56,7 +56,6 @@ function SimpleAvatar({
   const [isFocused, setIsFocused] = useState(false);
 
   const handleFocus = () => {
-    if (e.currentTarget !== e.target) return;
     setIsFocused(true);
     onFocusCharacter(id);
   };
