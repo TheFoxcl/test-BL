@@ -17,7 +17,6 @@ const App: React.FC = () => {
   const [charactersById, setCharactersById] = useState<any>({});
   const navigate = useNavigate();
 
-  // Detectar si la pantalla es pequeña (sm)
   const isSmallScreen = useMediaQuery({ query: "(max-width: 700px)" });
 
   const DetailsContainer: React.FC<{ charactersById: any }> = ({

@@ -56,6 +56,7 @@ function SimpleAvatar({
   const [isFocused, setIsFocused] = useState(false);
 
   const handleFocus = () => {
+    if (e.currentTarget !== e.target) return;
     setIsFocused(true);
     onFocusCharacter(id);
   };
@@ -88,7 +89,7 @@ function SimpleAvatar({
           <FaHeart
             className="w-6 h-6 text-customGreen"
             onClick={(e) => {
-              e.stopPropagation(); // Prevent the click event from bubbling up to the Stack
+              e.stopPropagation();
               onHeartClick(id);
             }}
           />
@@ -96,7 +97,7 @@ function SimpleAvatar({
           <FaRegHeart
             className="w-6 h-6 text-gray-400"
             onClick={(e) => {
-              e.stopPropagation(); // Prevent the click event from bubbling up to the Stack
+              e.stopPropagation();
               onHeartClick(id);
             }}
           />
@@ -128,8 +129,7 @@ function DetailsAvatar({
   note,
   onSaveNote,
   isStarred,
-}: // onHeartClick,
-DetailsAvatarProps) {
+}: DetailsAvatarProps) {
   const [currentNote, setCurrentNote] = useState<string>(note);
 
   const handleSaveNote = () => {

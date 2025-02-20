@@ -1,4 +1,3 @@
-// filepath: /c:/Users/jcbotero/Documents/test-blossom/rick and morty Bl/rick and morty/src/components/CharacterDetails.tsx
 import React from "react";
 import { useParams } from "react-router-dom";
 import { SimpleAvatar } from "./avatar";
